@@ -26,6 +26,11 @@ session_start();
     $sql = "SELECT * FROM tb_usuario "
             ." WHERE login_usu = '$login' "
             ." AND senha_usu = md5('$senha');";
+
+    //var_dump($sql);
+   // close();
+
+
     $resultLogin = mysqli_query($conn,$sql);
     mysqli_close($conn);
 
@@ -37,14 +42,14 @@ session_start();
         foreach ($resultLogin as $coluna) {
                         
             //***Verificar os dados da consulta SQL
-            $_SESSION['idTipoUsuario'] = $coluna['idUsuario'];
+            $_SESSION['idTipoUsuario'] = $coluna['tb_tipo_usuario_id_tipo_usuario'];
             $_SESSION['logado']        = 1;
-            $_SESSION['idLogin']       = $coluna['idUsuario'];
+            $_SESSION['idLogin']       = $coluna['id_Usuario'];
             $_SESSION['NomeLogin']     = $coluna['nome_usu'];
             $_SESSION['AtivoLogin']    = $coluna['flgAtivo'];
 
             //Acessar a tela inicial
-            header('location: ../painel.php');
+            header('location: ../inicial.php');
             
         }        
     }else{
