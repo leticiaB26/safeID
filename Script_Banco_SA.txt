@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 06/05/2025 às 02:10
+-- Tempo de geração: 07/05/2025 às 02:05
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -75,6 +75,14 @@ CREATE TABLE `tb_tipo_usuario` (
   `tipo_usuario` varchar(15) NOT NULL COMMENT 'admin ou comum'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Despejando dados para a tabela `tb_tipo_usuario`
+--
+
+INSERT INTO `tb_tipo_usuario` (`id_tipo_usuario`, `tipo_usuario`) VALUES
+(1, 'Admin'),
+(2, 'Comum');
+
 -- --------------------------------------------------------
 
 --
@@ -84,12 +92,20 @@ CREATE TABLE `tb_tipo_usuario` (
 CREATE TABLE `tb_usuario` (
   `id_usuario` int(11) NOT NULL,
   `nome_usu` varchar(80) NOT NULL,
-  `cpf_usu` varchar(14) NOT NULL,
-  `login_usu` varchar(100) NOT NULL,
-  `senha_usu` varchar(35) NOT NULL,
-  `flg_ativo` char(1) NOT NULL COMMENT 'S ou N',
+  `cpf_usu` varchar(14) DEFAULT NULL,
+  `login_usu` varchar(100) DEFAULT NULL,
+  `senha_usu` varchar(35) DEFAULT NULL,
+  `flg_ativo` char(1) DEFAULT NULL COMMENT 'S ou N',
+  `tb_tipo_usuario_id_tipo_usuario` int(11) NOT NULL,
   `cod_cracha` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `tb_usuario`
+--
+
+INSERT INTO `tb_usuario` (`id_usuario`, `nome_usu`, `cpf_usu`, `login_usu`, `senha_usu`, `flg_ativo`, `tb_tipo_usuario_id_tipo_usuario`, `cod_cracha`) VALUES
+(2, 'gabriel', '396.396.396-96', 'gabriel@senai.com', '202cb962ac59075b964b07152d234b70', 'S', 1, 'A222S');
 
 --
 -- Índices para tabelas despejadas
@@ -123,7 +139,8 @@ ALTER TABLE `tb_tipo_usuario`
 -- Índices de tabela `tb_usuario`
 --
 ALTER TABLE `tb_usuario`
-  ADD PRIMARY KEY (`id_usuario`);
+  ADD PRIMARY KEY (`id_usuario`,`cod_cracha`),
+  ADD KEY `fk_tb_usuario_tb_tipo_usuario1_idx` (`tb_tipo_usuario_id_tipo_usuario`);
 
 --
 -- AUTO_INCREMENT para tabelas despejadas
@@ -148,26 +165,20 @@ ALTER TABLE `tb_salas`
   MODIFY `id_sala` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de tabela `tb_tipo_usuario`
---
-ALTER TABLE `tb_tipo_usuario`
-  MODIFY `id_tipo_usuario` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT de tabela `tb_usuario`
 --
 ALTER TABLE `tb_usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restrições para tabelas despejadas
 --
 
 --
--- Restrições para tabelas `tb_tipo_usuario`
+-- Restrições para tabelas `tb_usuario`
 --
-ALTER TABLE `tb_tipo_usuario`
-  ADD CONSTRAINT `tb_tipo_usuario_ibfk_1` FOREIGN KEY (`id_tipo_usuario`) REFERENCES `tb_usuario` (`id_usuario`);
+ALTER TABLE `tb_usuario`
+  ADD CONSTRAINT `fk_tb_usuario_tb_tipo_usuario1` FOREIGN KEY (`tb_tipo_usuario_id_tipo_usuario`) REFERENCES `tb_tipo_usuario` (`id_tipo_usuario`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
