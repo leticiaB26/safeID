@@ -1,34 +1,39 @@
-<!DOCTYPE HTML>
-<html lang="pt-br">
-    <head>
-		
-		<meta charset="UTF-8">
-        <title>PHP</title>
 
-        <!-- CSS -->
-        <?php include('partes/css.php'); ?>
-        <!-- Fim CSS -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - SafeID</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login-container">
 
-    </head>
+    
+        <!-- Mostrar a logo acima do login centralizada -->
+        <img src="logo3.png" class="logo" alt="Logo SafeID">
 
-    <body class="tela-login">
+        <h1>SafeID</h1>
 
-        <form method="POST" action="php/validaLogin.php">
-        
-            <p>
-                <label for="iEmail">E-mail: </label>
-                <input type="email" id="iEmail" name="nEmail" required>
-            </p>
-
-            <p>
-                <label for="iSenha">Senha: </label>
-                <input type="password" id="iSenha" name="nSenha" required>
-            </p>
-
-            <button type="submit">Logar</button>
-
+            <?php 
+            session_start(); // precisa estar aqui se ainda não estiver no topo
+                if (isset($_SESSION['erroLogin'])) {
+                echo '<p style="color:red">'.$_SESSION['erroLogin'].'</p>';
+                unset($_SESSION['erroLogin']); // limpa a mensagem após exibir
+            }
+            ?>
+         
+        <form action="validaLogin.php" method="POST">
+            <input type="text" name="nLogin" placeholder="Login" required>
+            <br>
+            
+            <br>
+            <input type="password" name="nSenha" placeholder="Senha" required>
+            <br>
+            
+            <br>
+            <button type="submit">Entrar</button>
         </form>
-
-    </body>
-
+    </div>
+</body>
 </html>
