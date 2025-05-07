@@ -1,9 +1,6 @@
-<?PHP
+<?php
 
-include("funcaoCategoria.php");
-include("funcaoMenu.php");
-include("funcaoProduto.php");
-include("funcaoTipoUsuario.php");
+
 include("funcaoUsuario.php");
     
 use PHPMailer\PHPMailer\PHPMailer;
