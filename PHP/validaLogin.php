@@ -58,8 +58,7 @@ session_start();
         $_SESSION['erroLogin'] = 'Login ou senha inválidos';
         header('location: ../');
     }
-        
 
-    
+
 
 ?>
