@@ -19,7 +19,7 @@ function listaUsuario(){
             $lista .= 
             '<tr>'
                 .'<td align="center">'.$coluna["id_usuario"].'</td>'
-                .'<td align="center">'.descrTipoUsuario($coluna["tb_tipo_usuario_id_tipo_usuario"]).'</td>'
+                .'<td align="center">'.descrTipoUsuario($coluna["id_tipo_usuario"]).'</td>'
                 .'<td>'.$coluna["nome_usu"].'</td>'
                 .'<td>'.$coluna["login_usu"].'</td>'
                 .'<td align="center">'.$icone.'</td>'
@@ -62,17 +62,17 @@ function proxIdUsuario(){
 function tipoAcessoUsuario($id){
     $resp = "";
     include("conexao.php");
-    $sql = "SELECT tb_tipo_usuario_id_tipo_usuario FROM tb_usuario WHERE id_usuario = $id;";
+    $sql = "SELECT id_tipo_usuario FROM tb_usuario WHERE id_usuario = $id;";
     $result = mysqli_query($conn,$sql);
     mysqli_close($conn);
 
     if (mysqli_num_rows($result) > 0) {
         $linha = mysqli_fetch_assoc($result);
-        $tipo = $linha["tb_tipo_usuario_id_tipo_usuario"];
+        $tipo = $linha["id_tipo_usuario"];
         if($tipo == 1){
-            $resp = '<option value="1">Admin</option><option value="2">Comum</option>';
+            $resp = '<option value="1">Admin</option><option value="1">Comum</option>';
         } else {
-            $resp = '<option value="2">Comum</option><option value="1">Admin</option>';
+            $resp = '<option value="2">Comum</option><option value="2">Admin</option>';
         }
     }
 
