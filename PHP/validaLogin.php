@@ -42,14 +42,24 @@ session_start();
         foreach ($resultLogin as $coluna) {
                         
             //***Verificar os dados da consulta SQL
-            $_SESSION['idTipoUsuario'] = $coluna['tb_tipo_usuario_id_tipo_usuario'];
+            $_SESSION['idTipoUsuario'] = $coluna['id_tipo_usuario'];
             $_SESSION['logado']        = 1;
             $_SESSION['idLogin']       = $coluna['id_Usuario'];
             $_SESSION['NomeLogin']     = $coluna['nome_usu'];
             $_SESSION['AtivoLogin']    = $coluna['flgAtivo'];
 
-            //Acessar a tela inicial
+
             header('location: ../inicial.php');
+
+
+
+            /*Acessar a tela inicial
+            if($_SESSION['idTipoUsuario'] == 1){
+                header('location: ../usuarios.php');
+            }else{
+                header('location: ../usuarios.php');
+            }*/
+            
             
         }        
     }else{
@@ -58,7 +68,8 @@ session_start();
         $_SESSION['erroLogin'] = 'Login ou senha inválidos';
         header('location: ../');
     }
+      
 
-
+    
 
 ?>
