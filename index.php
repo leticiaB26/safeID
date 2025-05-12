@@ -23,7 +23,7 @@
             }
             ?>
          
-        <form action="validaLogin.php" method="POST">
+        <form action="PHP/validaLogin.php" method="POST">
             <input type="text" name="nLogin" placeholder="Login" required>
             <br>
             
