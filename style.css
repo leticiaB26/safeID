@@ -1,79 +1,18 @@
-/* Reset geral */
+/* Reset */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-/* Estilo da página de login */
-body.login-page {
+/* Página com sidebar */
+body {
     font-family: Arial, sans-serif;
-    background-color: #4682B4;
+    background-color: #f4f7fa;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    min-height: 100vh;
 }
 
-.login-container {
-    background-color: #9da8b1;
-    padding: 10px;
-    border-radius: 15px;
-    text-align: center;
-    width: 400px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
-}
-
-.login-container h1 {
-    color: #fff;
-    margin-bottom: 30px;
-}
-
-.login-container input[type="text"],
-.login-container input[type="password"] {
-    width: 90%;
-    padding: 8px;
-    margin: 10px 0;
-    border: none;
-    border-radius: 5px;
-    outline: none;
-    font-size: 16px;
-}
-
-.login-container label {
-    color: #27c512;
-    font-size: 20px;
-}
-
-.login-container button {
-    margin-top: 20px;
-    padding: 10px 30px;
-    border: 1px solid #27c512;
-    background-color: #3b6f9e;
-    color: #ffffff;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.login-container button:hover {
-    background-color: #32c045;
-    color: #ffffff;
-}
-
-.logo {
-    display: block;
-    margin: 0 auto 20px auto;
-    width: 120px;
-}
-
-/* Estilo da sidebar */
-body.sidebar-page {
-    display: flex;
-    font-family: Arial, sans-serif;
-    height: 100vh;
-}
 
 .sidebar {
     width: 220px;
@@ -104,12 +43,6 @@ body.sidebar-page {
     background-color: #3b6f9e;
 }
 
-.content {
-    margin-left: 220px;
-    padding: 30px;
-    flex-grow: 1;
-}
-
 .logout {
     margin-top: auto;
     padding: 20px;
@@ -120,4 +53,58 @@ body.sidebar-page {
     text-align: center;
     display: block;
     text-decoration: none;
+}
+
+/* Conteúdo principal */
+.content {
+    margin-left: 220px;
+    padding: 40px;
+    width: 100%;
+}
+
+/* Estilo do formulário */
+.form-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 500px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+    margin-bottom: 25px;
+    color: #333;
+    text-align: center;
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #444;
+}
+
+.form-container input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.form-container button {
+    background-color: #4682B4;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+.form-container button:hover {
+    background-color: #3b6f9e;
 }
