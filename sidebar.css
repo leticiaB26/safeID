@@ -57,3 +57,28 @@
         display: block;
         text-decoration: none;
     }
+
+    .sidebar a {
+        /* Estilos normais dos links */
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+        color: #333;
+        transition: background-color 0.3s;
+    }
+    
+    .sidebar a:hover {
+        background-color: #f0f0f0;
+    }
+    
+    .sidebar a.active {
+        background-color: #32c045; /* mesma cor do  gráfico */
+        color: white;
+        font-weight: bold;
+    }
+    
+    /* Estilo para o logout (opcional) */
+    .logout a {
+        margin-top: 20px;
+        color: #ff4444;
+    }

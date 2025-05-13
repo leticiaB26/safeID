@@ -82,7 +82,7 @@
               <input type="text" class="form-control" name="nomeSala" required>
             </div>
             <div class="form-group">
-              <label for="capacidade">Capacidade</label>
+              <label for="capacidade">Número</label>
               <input type="number" class="form-control" name="capacidade" required>
             </div>
         </div>
