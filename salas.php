@@ -9,17 +9,35 @@
 </head>
 <body>
 
-<?php include 'sidebar.php'; ?>
+
 
 <div class="content p-4">
+
     <h2>Salas</h2>
     
-    <div class="mb-3" align="right">
+        <div class="mb-3" align="right">
         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#novaSalaModal">
             Nova Sala
         </button>
     </div>
 
+    <?php include 'sidebar.php'; ?>
+        <div class="sidebar">
+        <h2> SafeID</h2>
+        <br>
+        <br>
+        <a href="inicial.php">Página inicial</a>
+        <a href="salas.php">Salas</a>
+        <a href="relatorios.php">Relatórios</a>
+        <a href="configuracoes.php">Configurações</a>
+       
+       
+         <div class="logout">
+                <a href="index.php">Sair</a>
+            </div>
+
+
+    
     <div class="row">
         <!-- Card de exemplo de sala -->
         <div class="col-md-4">
