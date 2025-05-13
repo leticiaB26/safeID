@@ -1,110 +1,63 @@
-/* Reset */
-* {
-    box-sizing: border-box;
+body {
     margin: 0;
     padding: 0;
-}
-
-/* Página com sidebar */
-body {
     font-family: Arial, sans-serif;
-    background-color: #f4f7fa;
-    display: flex;
-    min-height: 100vh;
-}
-
-
-.sidebar {
-    width: 220px;
     background-color: #4682B4;
-    color: white;
     display: flex;
-    flex-direction: column;
-    padding-top: 20px;
-    position: fixed;
-    left: 0;
-    top: 0;
-    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-.sidebar h2 {
+.login-container {
+    background-color: #9da8b1; /* Azul SafeID */
+    padding: 10px;
+    border-radius: 15px;
     text-align: center;
+    width: 400px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.login-container h1 {
+    color: #fff;
     margin-bottom: 30px;
 }
 
-.sidebar a {
-    padding: 12px 20px;
-    color: white;
-    text-decoration: none;
-    transition: background 0.3s;
-}
-
-.sidebar a:hover {
-    background-color: #3b6f9e;
-}
-
-.logout {
-    margin-top: auto;
-    padding: 20px;
-}
-
-.logout a {
-    color: white;
-    text-align: center;
-    display: block;
-    text-decoration: none;
-}
-
-/* Conteúdo principal */
-.content {
-    margin-left: 220px;
-    padding: 40px;
-    width: 100%;
-}
-
-/* Estilo do formulário */
-.form-container {
-    background-color: white;
-    padding: 30px;
-    border-radius: 15px;
-    max-width: 500px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-}
-
-.form-container h2 {
-    margin-bottom: 25px;
-    color: #333;
-    text-align: center;
-}
-
-.form-container label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: #444;
-}
-
-.form-container input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 16px;
-}
-
-.form-container button {
-    background-color: #4682B4;
-    color: white;
-    padding: 12px 25px;
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    width: 90%;
+    padding: 8px;
+    margin: 10px 0;
     border: none;
-    border-radius: 6px;
-    cursor: pointer;
+    border-radius: 5px;
+    outline: none;
     font-size: 16px;
-    transition: background-color 0.3s;
-    width: 100%;
 }
 
-.form-container button:hover {
-    background-color: #3b6f9e;
+.login-container label {
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.login-container button {
+    margin-top: 20px;
+    padding: 10px 30px;
+    border: 1px solid #ffffff;
+    background-color: transparent;
+    color: #ffffff;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login-container button:hover {
+    background-color: #32c045;
+    color: #ffffff;
+}
+
+.logo {
+    display: block;
+    margin: 0 auto 20px auto;
+    width: 120px;
 }
