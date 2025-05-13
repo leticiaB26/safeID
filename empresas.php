@@ -10,6 +10,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Projeto Modelo - Fornecedores</title>
 
+  gg
+
   <!-- CSS -->
   <?php include('partes/css.php'); ?>
   <!-- Fim CSS -->
