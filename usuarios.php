@@ -68,10 +68,11 @@
                   <thead>
                   <tr>
                       <th>ID</th>
-                      <th>Nome Fantasia</th>
-                      <th>CNPJ</th>
-                      <th>Cidade</th>
-                      <th>Ativo?</th>                                     
+                      <th>Nome completo</th>
+                      <th>Email</th>
+                      <th>Tipo de usuário</th>
+                      <th>Empresa</th>
+                      <th>Data de admissão</th>                                     
                   </tr>
                   </thead>
                   <tbody>
@@ -117,21 +118,21 @@
 
                   <div class="col-8">
                     <div class="form-group">
-                      <label for="iLogin">Nome Fantasia:</label>
+                      <label for="iLogin">Nome completo:</label>
                       <input type="email" class="form-control" id="iLogin" name="nLogin" maxlength="50">
                     </div>
                   </div>
 
                   <div class="col-4">
                     <div class="form-group">
-                      <label for="iSenha">CNPJ:</label>
+                      <label for="iSenha">Email:</label>
                       <input type="text" class="form-control" id="iSenha" name="nSenha" maxlength="6">
                     </div>
                   </div>
                 
                   <div class="col-12">
                     <div class="form-group">
-                      <label for="iFoto">Logo:</label>
+                      <label for="iFoto">Tipo de usuário:</label>
                       <input type="file" class="form-control" id="iFoto" name="Foto" accept="image/*">
                     </div>
                   </div>
@@ -139,18 +140,18 @@
                   <div class="col-12">
                     <div class="form-group">
                       <input type="checkbox" id="iAtivo" name="nAtivo">
-                      <label for="iAtivo">Fornecedor Ativo</label>
+                      <label for="iAtivo">Empresa:</label>
                     </div>
                   </div>
 
                   <div class="col-3">
                     <div class="form-group">
-                      <label>CEP</label>
+                      <label>Data de admissão:</label>
                       <input required name="CEP" type="text" class="form-control cep">
                     </div>
                   </div>
                   
-                  <div class="col-9">
+                  <!--<div class="col-9">
                     <div class="form-group">
                       <label>Endereço</label>
                       <input required name="Endereco" type="text" class="form-control">
@@ -197,7 +198,7 @@
                 <div class="modal-footer">
                   <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
                   <button type="submit" class="btn btn-success">Salvar</button>
-                </div>
+                </div> -->
                 
               </form>
 
