@@ -13,12 +13,15 @@
 
     <?php include 'sidebar.php'; ?>
         <div class="sidebar">
-        <img src="logo4.png" class="logo" alt="Logo SafeID" width="150">
+        <h2> SafeID</h2>
         <br>
         <br>
-            <a href="gerar_cracha.php">Gerar Crachá</a>
+        <a href="inicial.php">Página inicial</a>
+        <a href="salas.php">Salas</a>
         <a href="relatorios.php">Relatórios</a>
         <a href="configuracoes.php">Configurações</a>
+       
+       
             <div class="logout">
                 <a href="index.php">Sair</a>
             </div>
@@ -49,4 +52,3 @@
 
 </body>
 </html>
-
