@@ -1,246 +1,104 @@
-<?php 
-  //session_start();
-  //include('php/funcoes.php');
-?>
-
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Projeto Modelo - Fornecedores</title>
-
-  gg
-
-  <!-- CSS -->
-  <?php include('partes/css.php'); ?>
-  <!-- Fim CSS -->
-
+    <meta charset="UTF-8">
+    <title>Empresas | SafeID</title>
+    <link rel="stylesheet" href="sidebar.css">
+    <!-- Bootstrap (pra facilitar o layout dos cards e botões) -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
-<body class="hold-transition sidebar-mini layout-fixed">
-<div class="wrapper">
+<body>
 
-  <!-- Navbar -->
-  <?php include('partes/navbar.php'); ?>
-  <!-- Fim Navbar -->
 
-  <!-- Sidebar -->
-  <?php 
-    //$_SESSION['menu-n1'] = 'administrador';
-    //$_SESSION['menu-n2'] = 'fornecedores';
-    //include('partes/sidebar.php'); 
-  ?>
-  <!-- Fim Sidebar -->
 
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <!-- Espaço -->
+<div class="content p-4">
+
+    <h2>Empresas</h2>
+    
+        <div class="mb-3" align="right">
+        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#novaSalaModal">
+            Nova Empresa
+        </button>
     </div>
-    <!-- /.content-header -->
 
-    <!-- Main content -->
-    <section class="content">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-12">
-            <div class="card">
-              <div class="card-header">
-                <div class="row">
-                  
-                  <div class="col-9">
-                    <h3 class="card-title">Fornecedores</h3>
-                  </div>
-                  
-                  <div class="col-3" align="right">
-                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#novoFornecedorModal">
-                      Novo Fornecedor
-                    </button>
-                  </div>
-
-                </div>
-              </div>
-
-              
-
-              <!-- /.card-header -->
-              <div class="card-body">
-                <table id="tabela" class="table table-bordered table-hover">
-                  <thead>
-                  <tr>
-                      <th>ID</th>
-                      <th>Nome Fantasia</th>
-                      <th>CNPJ</th>
-                      <th>Cidade</th>
-                      <th>Ativo?</th>                                     
-                  </tr>
-                  </thead>
-                  <tbody>
-
-                  <?php //echo listaFornecedores(); ?>
-                  
-                  </tbody>
-                  
-                </table>
-              </div>
-              <!-- /.card-body -->
+    <?php include 'sidebar.php'; ?>
+        <div class="sidebar">
+        <h2> SafeID</h2>
+        <br>
+        <br>
+        <a href="inicial.php">Página inicial</a>
+        <a href="salas.php">Salas</a>
+        <a href="relatorios.php">Relatórios</a>
+        <a href="configuracoes.php">Configurações</a>
+        <a href="empresas.php">Empresas</a>
+       
+       
+         <div class="logout">
+                <a href="index.php">Sair</a>
             </div>
-            <!-- /.card -->
-            
-          </div>
-          <!-- /.col -->
+
+
+    
+    <div class="row">
+        <!-- Card de exemplo de sala -->
+        <div class="col-md-4">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Sala 01</h5>
+                    <p class="card-text">Capacidade: 20 pessoas</p>
+                    <a href="#" class="btn btn-primary">Detalhes</a>
+                    <a href="#" class="btn btn-danger">Excluir</a>
+                </div>
+            </div>
         </div>
-        <!-- /.row -->
-      </div>
-      <!-- /.container-fluid -->
 
-      <div class="modal fade" id="novoFornecedorModal">
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-            <div class="modal-header bg-success">
-              <h4 class="modal-title">Novo Fornecedor</h4>
-              <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <form method="POST" action="php/salvarFornecedor.php?funcao=I" enctype="multipart/form-data">              
-                
-                <div class="row">
-                  <div class="col-8">
-                    <div class="form-group">
-                      <label for="iNome">ID:</label>
-                      <input type="text" class="form-control" id="iNome" name="nNome" maxlength="50">
-                    </div>
-                  </div>
-
-                  
-
-                  <div class="col-8">
-                    <div class="form-group">
-                      <label for="iLogin">Nome Fantasia:</label>
-                      <input type="email" class="form-control" id="iLogin" name="nLogin" maxlength="50">
-                    </div>
-                  </div>
-
-                  <div class="col-4">
-                    <div class="form-group">
-                      <label for="iSenha">CNPJ:</label>
-                      <input type="text" class="form-control" id="iSenha" name="nSenha" maxlength="6">
-                    </div>
-                  </div>
-                
-                  <div class="col-12">
-                    <div class="form-group">
-                      <label for="iFoto">Logo:</label>
-                      <input type="file" class="form-control" id="iFoto" name="Foto" accept="image/*">
-                    </div>
-                  </div>
-                
-                  <div class="col-12">
-                    <div class="form-group">
-                      <input type="checkbox" id="iAtivo" name="nAtivo">
-                      <label for="iAtivo">Fornecedor Ativo</label>
-                    </div>
-                  </div>
-
-                  <div class="col-3">
-                    <div class="form-group">
-                      <label>CEP</label>
-                      <input required name="CEP" type="text" class="form-control cep">
-                    </div>
-                  </div>
-                  
-                  <div class="col-9">
-                    <div class="form-group">
-                      <label>Endereço</label>
-                      <input required name="Endereco" type="text" class="form-control">
-                    </div>
-                  </div>
-
-                  <div class="col-3">
-                    <div class="form-group">
-                      <label>Número</label>
-                      <input required name="Numero" type="text" maxlength="8" class="form-control">
-                    </div>
-                  </div>
-
-                  <div class="col-9">
-                    <div class="form-group">
-                      <label>Complemento</label>
-                      <input name="Complemento" type="text" maxlength="50" class="form-control">
-                    </div>
-                  </div>
-
-                  <div class="col-5">
-                    <div class="form-group">
-                      <label>Bairro</label>
-                      <input required name="Bairro" type="text" class="form-control">
-                    </div>
-                  </div>
-                  
-                  <div class="col-5">
-                    <div class="form-group">
-                      <label>Cidade</label>
-                      <input required name="Cidade" type="text" class="form-control">
-                    </div>
-                  </div>
-
-                  <div class="col-2">
-                    <div class="form-group">
-                      <label>UF</label>
-                      <input required name="UF" type="text" class="form-control">
-                    </div>
-                  </div>
-
+        <!-- Repita os cards para cada sala -->
+        <div class="col-md-4">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Sala 02</h5>
+                    <p class="card-text">Capacidade: 30 pessoas</p>
+                    <a href="#" class="btn btn-primary">Detalhes</a>
+                    <a href="#" class="btn btn-danger">Excluir</a>
                 </div>
-
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
-                  <button type="submit" class="btn btn-success">Salvar</button>
-                </div>
-                
-              </form>
-
             </div>
-            
-          </div>
-          <!-- /.modal-content -->
         </div>
-        <!-- /.modal-dialog -->
-      </div>
-      <!-- /.modal -->
-
-    </section>
-    <!-- /.content -->
-  </div>
-
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-  </aside>
-  <!-- /.control-sidebar -->
+    </div>
 </div>
-<!-- ./wrapper -->
 
-<!-- JS -->
-<?php include('partes/js.php'); ?>
-<!-- Fim JS -->
+<!-- Modal para adicionar nova sala -->
+<div class="modal fade" id="novaSalaModal" tabindex="-1" role="dialog" aria-labelledby="novaSalaModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <form action="salvar_sala.php" method="POST"> <!-- Ajuste para seu backend -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="novaSalaModalLabel">Nova Sala</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="form-group">
+              <label for="nomeSala">Nome da Sala</label>
+              <input type="text" class="form-control" name="nomeSala" required>
+            </div>
+            <div class="form-group">
+              <label for="capacidade">Número</label>
+              <input type="number" class="form-control" name="capacidade" required>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+          <button type="submit" class="btn btn-success">Salvar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
 
-<script>
-  $(function () {
-    $('#tabela').DataTable({
-      "paging": true,
-      "lengthChange": true,
-      "searching": true,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false,
-      "responsive": true,
-    });
-  });
-</script>
+<!-- JS do Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
