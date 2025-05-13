@@ -8,7 +8,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Projeto Modelo - Fornecedores</title>
+  <title>Usuários</title>
 
   <!-- CSS -->
   <?php include('partes/css.php'); ?>
@@ -48,12 +48,12 @@
                 <div class="row">
                   
                   <div class="col-9">
-                    <h3 class="card-title">Fornecedores</h3>
+                    <h3 class="card-title">Usuários</h3>
                   </div>
                   
                   <div class="col-3" align="right">
-                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#novoFornecedorModal">
-                      Novo Fornecedor
+                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#novoUsuarioModal">
+                      Novo Usuário
                     </button>
                   </div>
 
@@ -93,11 +93,11 @@
       </div>
       <!-- /.container-fluid -->
 
-      <div class="modal fade" id="novoFornecedorModal">
+      <div class="modal fade" id="novoUsuarioModal">
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
             <div class="modal-header bg-success">
-              <h4 class="modal-title">Novo Fornecedor</h4>
+              <h4 class="modal-title">Novo Usuário</h4>
               <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
