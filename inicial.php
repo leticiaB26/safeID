@@ -19,7 +19,8 @@
         <a href="inicial.php">Página inicial</a>
         <a href="salas.php">Salas</a>
         <a href="relatorios.php">Relatórios</a>
-        <a href="configuracoes.php">Configurações</a>
+        <a href="usuarios.php">Usuarios</a>
+        <a href="empresas.php">Empresas</a>
        
        
             <div class="logout">
