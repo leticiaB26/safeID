@@ -130,19 +130,28 @@
                     </div>
                   </div>
                 
-                  <div class="col-12">
+                <!-- Tipo de Usuário -->
+                  <div class="col-6">
                     <div class="form-group">
-                      <label for="iFoto">Tipo de usuário:</label>
-                      <input type="file" class="form-control" id="iFoto" name="Foto" accept="image/*">
+                      <label for="tipoUsuario">Tipo de Usuário:</label>
+                      <select class="form-control" id="tipoUsuario" name="tipo_usuario" required>
+                        <option value="">Selecione</option>
+                        <option value="admin">Administrador</option>
+                        <option value="comum">Comum</option>
+                      </select>
                     </div>
                   </div>
-                
-                  <div class="col-12">
+
+                <!-- Empresa -->
+                  <div class="col-6">
                     <div class="form-group">
-                      <input type="checkbox" id="iAtivo" name="nAtivo">
-                      <label for="iAtivo">Empresa:</label>
+                      <label for="empresa">Empresa:</label>
+                      <select class="form-control" id="empresa" name="empresa_id" required>
+                        <option value="">Selecione</option>
+                      </select>
                     </div>
                   </div>
+
 
                   <div class="col-3">
                     <div class="form-group">
@@ -193,12 +202,12 @@
                     </div>
                   </div>
 
-                </div>
+                </div>-->
 
                 <div class="modal-footer">
                   <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
                   <button type="submit" class="btn btn-success">Salvar</button>
-                </div> -->
+                </div> 
                 
               </form>
 
