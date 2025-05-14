@@ -156,7 +156,7 @@
                   <div class="col-3">
                     <div class="form-group">
                       <label>Data de admissão:</label>
-                      <input required name="CEP" type="text" class="form-control cep">
+                      <input required name="CEP" type="date" class="form-control cep">
                     </div>
                   </div>
                   
